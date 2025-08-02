@@ -1,0 +1,42 @@
+{
+  "name": "liquidatorhub-profile",
+  "version": "1.0.0",
+  "description": "Comprehensive showcase of development capabilities - answering 'что ты можешь сделать?'",
+  "main": "examples/demo.js",
+  "type": "module",
+  "scripts": {
+    "demo": "node examples/demo.js",
+    "python-demo": "python examples/hello_world.py",
+    "test": "echo \"No tests specified yet. Run 'npm run demo' to see capabilities.\"",
+    "lint": "echo \"Linting would run here in a real project\"",
+    "start": "node examples/demo.js"
+  },
+  "keywords": [
+    "profile",
+    "capabilities",
+    "demo",
+    "javascript",
+    "python",
+    "development",
+    "showcase"
+  ],
+  "author": "LiquidatorHub",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "jest": "^29.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LiquidatorHub/LiquidatorHub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LiquidatorHub/LiquidatorHub/issues"
+  },
+  "homepage": "https://github.com/LiquidatorHub/LiquidatorHub#readme"
+}
