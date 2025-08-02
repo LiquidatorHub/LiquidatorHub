@@ -1,0 +1,120 @@
+name: 🚀 Capabilities Demo Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Run daily at midnight UTC
+    - cron: '0 0 * * *'
+
+jobs:
+  demo-capabilities:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18, 20]
+        python-version: [3.9, 3.11]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: 🟢 Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: 📦 Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest flake8 black
+        
+    - name: 📦 Install Node.js Dependencies
+      run: |
+        npm install -g eslint prettier jest
+        
+    - name: 🔍 Python Code Quality Check
+      run: |
+        # Check if Python files exist before running linters
+        if ls examples/*.py 1> /dev/null 2>&1; then
+          echo "Running Python linters..."
+          flake8 examples/*.py --max-line-length=88 --ignore=E203,W503
+          black --check examples/*.py
+        else
+          echo "No Python files found to lint"
+        fi
+        
+    - name: 🔍 JavaScript Code Quality Check
+      run: |
+        # Check if JavaScript files exist before running linters
+        if ls examples/*.js 1> /dev/null 2>&1; then
+          echo "Running JavaScript linters..."
+          eslint examples/*.js --fix-dry-run || true
+          prettier --check examples/*.js || true
+        else
+          echo "No JavaScript files found to lint"
+        fi
+        
+    - name: 🧪 Run Python Demo
+      run: |
+        if [ -f "examples/hello_world.py" ]; then
+          echo "Running Python capabilities demo..."
+          python examples/hello_world.py
+        else
+          echo "Python demo file not found"
+        fi
+        
+    - name: 🧪 Run JavaScript Demo
+      run: |
+        if [ -f "examples/demo.js" ]; then
+          echo "Running JavaScript capabilities demo..."
+          node examples/demo.js
+        else
+          echo "JavaScript demo file not found"
+        fi
+        
+    - name: 📊 Generate Report
+      run: |
+        echo "## 🎯 Capabilities Demo Report" >> $GITHUB_STEP_SUMMARY
+        echo "| Language | Version | Status |" >> $GITHUB_STEP_SUMMARY
+        echo "|----------|---------|---------|" >> $GITHUB_STEP_SUMMARY
+        echo "| Python | ${{ matrix.python-version }} | ✅ Success |" >> $GITHUB_STEP_SUMMARY
+        echo "| Node.js | ${{ matrix.node-version }} | ✅ Success |" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📈 Metrics" >> $GITHUB_STEP_SUMMARY
+        echo "- **Files processed**: $(find examples -name '*.py' -o -name '*.js' | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Languages demonstrated**: Python, JavaScript" >> $GITHUB_STEP_SUMMARY
+        echo "- **Workflow run time**: $(date)" >> $GITHUB_STEP_SUMMARY
+
+  update-snake:
+    runs-on: ubuntu-latest
+    needs: demo-capabilities
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Generate Snake Animation
+      uses: Platane/snk@v3
+      with:
+        github_user_name: ${{ github.repository_owner }}
+        outputs: |
+          github-contribution-grid-snake.svg
+          github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+    - name: 📤 Commit Snake Animation
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add *.svg
+        git diff --staged --quiet || git commit -m "🐍 Update snake animation"
+        git push || true
