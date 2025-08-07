@@ -10,5 +10,4 @@
   <a href="https://typescriptlang.org/" target="_blank" title="TypeScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="48" height="48" /></a>
   <a href="https://code.visualstudio.com/" target="_blank" title="VS Code"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="48" height="48" /></a>
   <a href="https://nodejs.org" target="_blank" title="NodeJS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="48" height="48" /></a>
-  <a href="https://nginx.org/" target="_blank" title="NGINX"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" width="48" height="48" /></a>
 </p>
