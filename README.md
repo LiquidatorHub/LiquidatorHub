@@ -9,9 +9,7 @@
   <a href="https://typescriptlang.org/" target="_blank" title="TypeScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="48" height="48" /></a>
   <a href="https://code.visualstudio.com/" target="_blank" title="VS Code"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="48" height="48" /></a>
 </p>
-<p align="center">
-  <img src="https://github.com/LiquidatorHub/LiquidatorHub/blob/output/github-contribution-grid-snake-dark.svg" alt="snake devouring my commits" width="820"/>
-</p>
+
 
 
 
