@@ -1,8 +1,3 @@
-<!-- LIQUIDATOR 3.0 — NO RULES. NO MERCY. NO SURVIVORS. -->
-
-<!-- ████████████████ WAVE HEADER ████████████████ -->
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF0040,33:FF00FF,66:FF1493,100:00FF9F&height=220&section=header&text=LIQUIDATOR%203.0&fontSize=72&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=chaos%20engineer%20%E2%80%A2%20she%2Fher%20%E2%80%A2%20no%20survivors%20%F0%9F%92%80&descAlignY=65&descSize=19" width="100%"/>
 
 <!-- ████████████████ BOOT SEQUENCE ████████████████ -->
 
