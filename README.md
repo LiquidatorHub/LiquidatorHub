@@ -52,53 +52,6 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
 
 <br/>
-
-<!-- ████████████████ AVATAR + TROPHIES ████████████████ -->
-
-<table align="center" border="0" cellspacing="0" cellpadding="20">
-<tr>
-<td align="center" valign="top" width="220">
-
-<img src="./avatar-3d.svg" width="180" alt="LIQUIDATOR AVATAR"/>
-
-<br/>
-
-<img src="https://img.shields.io/badge/CHAOS-ENGINEER-FF00FF?style=flat-square&labelColor=0A0A0A"/>
-
-</td>
-<td align="center" valign="top">
-
-<img src="https://github-profile-trophy.vercel.app/?username=LiquidatorHub&theme=radical&no-frame=true&column=4&row=2&margin-h=10&margin-w=5" alt="trophies"/>
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<!-- ████████████████ STATS ████████████████ -->
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=LiquidatorHub&show_icons=true&theme=radical&hide_border=true&title_color=FF00FF&text_color=00FF9F&bg_color=0A000F&icon_color=FF1493&include_all_commits=true&count_private=true&ring_color=FF00FF" height="180" alt="STATS"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=LiquidatorHub&theme=radical&hide_border=true&stroke=FF00FF&ring=00FF9F&fire=FF0040&currStreakNum=FF00FF&sideNums=00FF9F&dates=888888&background=0A000F" height="180" alt="STREAK"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LiquidatorHub&layout=compact&theme=radical&hide_border=true&title_color=FF00FF&text_color=00FF9F&bg_color=0A000F&langs_count=8" height="150" alt="LANGS"/>
-</p>
-
-<!-- ████████████████ ACTIVITY GRAPH ████████████████ -->
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=LiquidatorHub&theme=radical&hide_border=true&area=true&area_color=FF00FF&color=00FF9F&line=FF00FF&point=FF1493&bg_color=0A000F" alt="KILL GRAPH"/>
-</p>
-
-<!-- ████████████████ 3D CONTRIBUTION ████████████████ -->
-
-<p align="center">
-  <img src="https://github-profile-3d-contrib.vercel.app/api/informal-rotate-profile-contrib-south/LiquidatorHub.gif" width="600" alt="3D CONTRIBUTION GLOBE"/>
-</p>
-
 <!-- ████████████████ SNAKE ████████████████ -->
 
 <p align="center">
