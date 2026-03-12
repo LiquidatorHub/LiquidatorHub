@@ -1,3 +1,10 @@
+<!-- ████████████████ SNAKE ████████████████ -->
+
+<p align="center">
+  <img src="./github-contribution-grid-snake.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
+</p>
+
+<br/>
 
 <!-- ████████████████ BOOT SEQUENCE ████████████████ -->
 
@@ -45,13 +52,6 @@
 <!-- ████████████████ GRADIENT DIVIDER ████████████████ -->
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
-
-<br/>
-<!-- ████████████████ SNAKE ████████████████ -->
-
-<p align="center">
-  <img src="./github-contribution-grid-snake.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
-</p>
 
 <br/>
 
