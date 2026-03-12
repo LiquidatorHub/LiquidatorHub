@@ -1,30 +1,36 @@
 <!-- LIQUIDATOR 3.0 — NO RULES. NO MERCY. NO SURVIVORS. -->
 
-<!-- ██████████████ BOOT SEQUENCE ██████████████ -->
+<!-- ████████████████ WAVE HEADER ████████████████ -->
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF0040,33:FF00FF,66:FF1493,100:00FF9F&height=220&section=header&text=LIQUIDATOR%203.0&fontSize=72&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=chaos%20engineer%20%E2%80%A2%20she%2Fher%20%E2%80%A2%20no%20survivors%20%F0%9F%92%80&descAlignY=65&descSize=19" width="100%"/>
+
+<!-- ████████████████ BOOT SEQUENCE ████████████████ -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=28&duration=400&pause=200&color=FF0040&center=true&vCenter=true&width=900&height=60&lines=%5BSYS%5D+INITIATING+BOOT+SEQUENCE...;%5BERROR%5D+UNAUTHORIZED+ACCESS+DETECTED;%5BALERT%5D+FIREWALL+BREACH+ATTEMPT;%5BWARN%5D+COUNTERMEASURES+ENGAGED;%5BCRIT%5D+ALL+SYSTEMS+COMPROMISED" alt="boot"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=22&duration=300&pause=150&color=FF0040&center=true&vCenter=true&width=900&height=60&lines=%5BBOOT%5D+%E2%96%88+INITIATING+LIQUIDATOR+OS+v3.0...;%5BSCAN%5D+%E2%96%88+UNAUTHORIZED+PRESENCE+DETECTED;%5BALERT%5D+%E2%96%88+FIREWALL+%5BKILLED%5D+IN+0.003s;%5BROOT%5D+%E2%96%88+PRIVILEGE+ESCALATION...+DONE;%5BGOD%5D+%E2%96%88+MATRIX+OWNED.+WELCOME+%E2%98%A0;%5BWARN%5D+%E2%96%88+SURVIVOR+COUNT%3A+NULL" alt="boot"/>
 </p>
 
-<!-- ██████████████ ACCESS DENIED PANEL ██████████████ -->
-
-<div align="center">
-
-</div>
-
-<!-- ██████████████ ACCESS GRANTED SEQUENCE ██████████████ -->
+<!-- ████████████████ GLITCH BANNER ████████████████ -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=20&duration=600&pause=400&color=00FF9F&center=true&vCenter=true&width=900&height=50&lines=%5BAUTH%5D+OVERRIDING+SECURITY+MATRIX...;%5BROOT%5D+PRIVILEGE+ESCALATION+COMPLETE;%5BGOD%5D+ACCESS+GRANTED+%E2%98%A0;%5BSYS%5D+WELCOME%2C+LIQUIDATOR+%F0%9F%92%80" alt="access granted"/>
+  <img src="./glitch-banner.svg" alt="LIQUIDATOR GLITCH BANNER" width="900"/>
+</p>
+
+<!-- ████████████████ ACCESS GRANTED SEQUENCE ████████████████ -->
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=20&duration=500&pause=300&color=00FF9F&center=true&vCenter=true&width=900&height=50&lines=%5BAUTH%5D+OVERRIDING+SECURITY+MATRIX...;%5BROOT%5D+ACCESS+LEVEL%3A+ABSOLUTE;%5BGOD%5D+WELCOME%2C+LIQUIDATOR+%F0%9F%92%80;%5BSYS%5D+NO+SURVIVORS+DETECTED.+PROCEEDING..." alt="access granted"/>
 </p>
 
 <br/>
 
-<!-- ██████████████ GLITCH BANNER ██████████████ -->
+<!-- ████████████████ MAIN TITLE ████████████████ -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=38&duration=2000&pause=1000&color=FF00FF&center=true&vCenter=true&width=900&height=90&lines=LIQUIDATOR+3.0;CHAOS+ENGINEER;NO+SURVIVORS+%F0%9F%92%80;MATRIX+OWNED;SHE%2FHER+%E2%98%A0;SYSTEM%3A+NULL" alt="GLITCH MAIN"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=36&duration=2500&pause=1200&color=FF00FF&center=true&vCenter=true&width=900&height=90&lines=LIQUIDATOR+3.0;CHAOS+ENGINEER+%F0%9F%94%A5;NO+SURVIVORS+%F0%9F%92%80;MATRIX+OWNED+%E2%98%A0;SHE%2FHER+%E2%99%A0;SYSTEM%3A+NULL" alt="GLITCH MAIN"/>
 </p>
+
+<!-- ████████████████ STATUS BADGES ████████████████ -->
 
 <p align="center">
   <img src="https://img.shields.io/badge/⚠_STATUS-HUNTING-FF0040?style=for-the-badge&labelColor=0A0A0A&color=FF0040"/>
@@ -33,28 +39,36 @@
   <img src="https://img.shields.io/badge/⚡_MATRIX-COMPROMISED-FF1493?style=for-the-badge&labelColor=0A0A0A"/>
 </p>
 
-<br/>
-
-<!-- ██████████████ AVATAR + TERMINAL ██████████████ -->
-
-<table align="center" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="220" valign="top">
-
-<!-- 3D AVATAR -->
 <p align="center">
-
-```
-```
-<img src="https://github-profile-trophy.vercel.app/?username=LiquidatorHub&theme=radical&no-frame=true&column=1&row=3" width="180"/>
-
+  <img src="https://img.shields.io/badge/🖥_OS-KALI_LINUX-557C94?style=for-the-badge&logo=linux&logoColor=white&labelColor=0A0A0A"/>
+  <img src="https://img.shields.io/badge/🎯_FOCUS-FULL_STACK-FF6B6B?style=for-the-badge&labelColor=0A0A0A"/>
+  <img src="https://img.shields.io/badge/☠_SURVIVORS-0-FF0040?style=for-the-badge&labelColor=0A0A0A"/>
 </p>
 
-</td>
-<td width="20"></td>
-<td valign="top">
+<br/>
 
-<!-- TERMINAL SESSION -->
+<!-- ████████████████ GRADIENT DIVIDER ████████████████ -->
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
+
+<br/>
+
+<!-- ████████████████ AVATAR + TROPHIES ████████████████ -->
+
+<table align="center" border="0" cellspacing="0" cellpadding="20">
+<tr>
+<td align="center" valign="top" width="220">
+
+<img src="./avatar-3d.svg" width="180" alt="LIQUIDATOR AVATAR"/>
+
+<br/>
+
+<img src="https://img.shields.io/badge/CHAOS-ENGINEER-FF00FF?style=flat-square&labelColor=0A0A0A"/>
+
+</td>
+<td align="center" valign="top">
+
+<img src="https://github-profile-trophy.vercel.app/?username=LiquidatorHub&theme=radical&no-frame=true&column=4&row=2&margin-h=10&margin-w=5" alt="trophies"/>
 
 </td>
 </tr>
@@ -62,30 +76,30 @@
 
 <br/>
 
-<!-- ██████████████ STATS ██████████████ -->
+<!-- ████████████████ STATS ████████████████ -->
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=LiquidatorHub&show_icons=true&theme=radical&hide_border=true&title_color=FF00FF&text_color=00FF9F&bg_color=0A000F&icon_color=FF1493&include_all_commits=true&count_private=true&ring_color=FF00FF" height="175" alt="STATS"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=LiquidatorHub&theme=radical&hide_border=true&stroke=FF00FF&ring=00FF9F&fire=FF0040&currStreakNum=FF00FF&sideNums=00FF9F&dates=888888&background=0A000F" height="175" alt="STREAK"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=LiquidatorHub&show_icons=true&theme=radical&hide_border=true&title_color=FF00FF&text_color=00FF9F&bg_color=0A000F&icon_color=FF1493&include_all_commits=true&count_private=true&ring_color=FF00FF" height="180" alt="STATS"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=LiquidatorHub&theme=radical&hide_border=true&stroke=FF00FF&ring=00FF9F&fire=FF0040&currStreakNum=FF00FF&sideNums=00FF9F&dates=888888&background=0A000F" height="180" alt="STREAK"/>
 </p>
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LiquidatorHub&layout=compact&theme=radical&hide_border=true&title_color=FF00FF&text_color=00FF9F&bg_color=0A000F&langs_count=8" height="150" alt="LANGS"/>
 </p>
 
-<!-- ██████████████ ACTIVITY GRAPH ██████████████ -->
+<!-- ████████████████ ACTIVITY GRAPH ████████████████ -->
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=LiquidatorHub&theme=radical&hide_border=true&area=true&area_color=FF00FF&color=00FF9F&line=FF00FF&point=FF1493&bg_color=0A000F" alt="KILL GRAPH"/>
 </p>
 
-<!-- ██████████████ 3D CONTRIBUTION ██████████████ -->
+<!-- ████████████████ 3D CONTRIBUTION ████████████████ -->
 
 <p align="center">
   <img src="https://github-profile-3d-contrib.vercel.app/api/informal-rotate-profile-contrib-south/LiquidatorHub.gif" width="600" alt="3D CONTRIBUTION GLOBE"/>
 </p>
 
-<!-- ██████████████ SNAKE ██████████████ -->
+<!-- ████████████████ SNAKE ████████████████ -->
 
 <p align="center">
   <img src="./github-contribution-grid-snake.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
@@ -93,17 +107,17 @@
 
 <br/>
 
-<!-- ██████████████ ARSENAL ██████████████ -->
+<!-- ████████████████ GRADIENT DIVIDER ████████████████ -->
 
-<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00FF9F,50:FF00FF,100:FF0040&height=3" width="100%"/>
 
-```
-╔══════════════════════════════════════════════╗
-║           ⚡  WEAPONS OF MASS DESTRUCTION  ⚡  ║
-╚══════════════════════════════════════════════╝
-```
+<br/>
 
-</div>
+<!-- ████████████████ ARSENAL ████████████████ -->
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=22&duration=1500&pause=800&color=FF00FF&center=true&vCenter=true&width=900&height=50&lines=%E2%9A%A1+WEAPONS+OF+MASS+DESTRUCTION+%E2%9A%A1;%5BARSENAL%5D+LOADING+TECH+STACK..." alt="ARSENAL HEADER"/>
+</p>
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,tailwind,vscode&theme=dark&perline=8" alt="WEAPONS"/>
@@ -115,14 +129,17 @@
 
 <br/>
 
-<!-- ██████████████ SYSTEM STATUS ██████████████ -->
+<!-- ████████████████ GRADIENT DIVIDER ████████████████ -->
 
-<div align="center">
-</div>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
 
 <br/>
 
-<!-- ██████████████ CONTACTS ██████████████ -->
+<!-- ████████████████ CONTACTS ████████████████ -->
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=20&duration=1200&pause=600&color=00FF9F&center=true&vCenter=true&width=900&height=40&lines=%5BCONTACT%5D+OPEN+TRANSMISSION+CHANNEL...;%5BSYS%5D+ESTABLISHING+ENCRYPTED+LINK..." alt="CONTACT HEADER"/>
+</p>
 
 <p align="center">
   <a href="https://t.me/LIQUIDATORHUB">
@@ -141,7 +158,7 @@
 
 <br/>
 
-<!-- ██████████████ FINAL TRANSMISSION ██████████████ -->
+<!-- ████████████████ FINAL TRANSMISSION ████████████████ -->
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=16&duration=3000&pause=500&color=FF00FF&center=true&vCenter=true&width=900&height=40&lines=%5BSYS%5D+TRANSMISSION+COMPLETE.+NO+TRACE+LEFT.+%F0%9F%92%80;%5BSYS%5D+LIQUIDATOR+HAS+LEFT+THE+MATRIX.+GOODBYE.;%5BSYS%5D+...+or+has+she%3F" alt="outro"/>
@@ -156,5 +173,9 @@
 <img src="https://img.shields.io/badge/ACCESS-GRANTED_☠-FF00FF?style=for-the-badge&labelColor=0A0A0A"/>
 
 </div>
+
+<!-- ████████████████ WAVE FOOTER ████████████████ -->
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00FF9F,50:FF00FF,100:FF0040&height=120&section=footer" width="100%"/>
 
 <!-- EOF: YOU WERE WARNED -->
