@@ -1,290 +1,346 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
   <defs>
 
-    <!-- Deep void background -->
-    <radialGradient id="voidBg" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" style="stop-color:#0a0000"/>
-      <stop offset="60%" style="stop-color:#050000"/>
+    <!-- Void radial -->
+    <radialGradient id="void" cx="50%" cy="50%" r="55%">
+      <stop offset="0%"   style="stop-color:#060008"/>
+      <stop offset="70%"  style="stop-color:#030003"/>
       <stop offset="100%" style="stop-color:#000000"/>
     </radialGradient>
 
-    <!-- Blood gradient -->
-    <linearGradient id="bloodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B0000"/>
-      <stop offset="40%" style="stop-color:#CC0000"/>
-      <stop offset="100%" style="stop-color:#3D0000"/>
-    </linearGradient>
-
-    <!-- Terror text gradient — red to near-black -->
-    <linearGradient id="terrorText" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#3D0000"/>
-      <stop offset="30%" style="stop-color:#CC0000"/>
-      <stop offset="50%" style="stop-color:#FF1111">
-        <animate attributeName="stop-color" values="#FF1111;#CC0000;#FF0000;#8B0000;#FF1111" dur="3s" repeatCount="indefinite"/>
+    <!-- Sickly green glow for text -->
+    <linearGradient id="sickGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#001a00"/>
+      <stop offset="30%"  style="stop-color:#00CC00"/>
+      <stop offset="50%"  style="stop-color:#33FF33">
+        <animate attributeName="stop-color" values="#33FF33;#00FF00;#00CC00;#AAFFAA;#33FF33" dur="4s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="70%" style="stop-color:#CC0000"/>
-      <stop offset="100%" style="stop-color:#3D0000"/>
+      <stop offset="70%"  style="stop-color:#00CC00"/>
+      <stop offset="100%" style="stop-color:#001a00"/>
     </linearGradient>
 
-    <!-- Glitch displacement — violent -->
-    <filter id="violentGlitch" x="-20%" y="-20%" width="140%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9 0.02" numOctaves="1" result="noise" seed="1">
-        <animate attributeName="seed" values="1;44;7;19;3;88;2;55;1" dur="0.15s" repeatCount="indefinite"/>
-        <animate attributeName="baseFrequency" values="0.9 0.02;0.9 0.02;0.9 0.02;0.9 0.02;0.9 0.02;0.9 0.02;2 0.05;0.9 0.02;0.9 0.02;0.9 0.02" dur="4s" repeatCount="indefinite"/>
+    <!-- White flash for screamer -->
+    <radialGradient id="screamFlash" cx="50%" cy="50%" r="80%">
+      <stop offset="0%"   style="stop-color:#ffffff"/>
+      <stop offset="60%"  style="stop-color:#cccccc"/>
+      <stop offset="100%" style="stop-color:#888888"/>
+    </radialGradient>
+
+    <!-- Eye gradient (scary eye whites) -->
+    <radialGradient id="eyeWhite" cx="50%" cy="40%" r="55%">
+      <stop offset="0%"   style="stop-color:#ddddcc"/>
+      <stop offset="70%"  style="stop-color:#bbbbaa"/>
+      <stop offset="100%" style="stop-color:#888877"/>
+    </radialGradient>
+
+    <radialGradient id="pupil" cx="45%" cy="40%" r="50%">
+      <stop offset="0%"   style="stop-color:#000000"/>
+      <stop offset="60%"  style="stop-color:#0a0500"/>
+      <stop offset="100%" style="stop-color:#1a0a00"/>
+    </radialGradient>
+
+    <!-- Static/noise filter -->
+    <filter id="staticNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise" seed="9">
+        <animate attributeName="seed" values="9;3;17;5;22;8;1;14;9" dur="0.08s" repeatCount="indefinite"/>
       </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G">
-        <animate attributeName="scale" values="0;0;0;0;0;0;0;35;0;0;0;0;0;0;0;0;0;28;0;0;0;0;0;0;0;0;0;0;50;0;0;0;0;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-      </feDisplacementMap>
-    </filter>
-
-    <!-- Corruption filter for subtle always-on distortion -->
-    <filter id="corrupt">
-      <feTurbulence type="turbulence" baseFrequency="0.015 0.8" numOctaves="1" result="noise" seed="5">
-        <animate attributeName="seed" values="5;12;3;8;5" dur="0.8s" repeatCount="indefinite"/>
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-
-    <!-- Red glow bloom -->
-    <filter id="redBloom" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feColorMatrix type="matrix" values="1 0 0 0 0.5  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" in="blur" result="redBlur"/>
-      <feMerge>
-        <feMergeNode in="redBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Subtle glow -->
-    <filter id="softBlood">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <!-- Scanline pattern -->
-    <pattern id="scanPattern" x="0" y="0" width="2" height="4" patternUnits="userSpaceOnUse">
-      <rect width="2" height="1" fill="#000" opacity="0.35"/>
-    </pattern>
-
-    <!-- Noise texture -->
-    <filter id="noiseFilter">
-      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
-      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-      <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="blend"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feBlend in="SourceGraphic" in2="gray" mode="overlay" result="blend"/>
       <feComposite in="blend" in2="SourceGraphic" operator="in"/>
     </filter>
 
+    <!-- Violent glitch -->
+    <filter id="shatter" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="turbulence" baseFrequency="0.04 1.2" numOctaves="1" seed="7" result="n">
+        <animate attributeName="seed" values="7;33;2;19;7" dur="0.2s" repeatCount="indefinite"/>
+        <animate attributeName="baseFrequency"
+          values="0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;3 0.1;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;4 0.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2;0.04 1.2"
+          dur="6s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale"
+          values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;55;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;40;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;70;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+          dur="8s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+
+    <!-- Soft glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Strong white glow for screamer eyes -->
+    <filter id="eyeGlow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
     <!-- Vignette -->
-    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" style="stop-color:#000;stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:#000;stop-opacity:0.85"/>
+    <radialGradient id="vig" cx="50%" cy="50%" r="65%">
+      <stop offset="0%"   style="stop-color:#000;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0.92"/>
     </radialGradient>
 
-    <clipPath id="bannerClip">
-      <rect width="900" height="200"/>
-    </clipPath>
+    <!-- Scanlines pattern -->
+    <pattern id="lines" x="0" y="0" width="1" height="3" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" y="0" fill="#000" opacity="0.45"/>
+    </pattern>
+
+    <clipPath id="clip"><rect width="900" height="200"/></clipPath>
   </defs>
 
-  <g clip-path="url(#bannerClip)">
+  <g clip-path="url(#clip)">
 
     <!-- ██ VOID BASE ██ -->
-    <rect width="900" height="200" fill="url(#voidBg)"/>
+    <rect width="900" height="200" fill="#000"/>
+    <rect width="900" height="200" fill="url(#void)"/>
 
-    <!-- Noise grain overlay -->
-    <rect width="900" height="200" fill="#1a0000" filter="url(#noiseFilter)" opacity="0.4"/>
+    <!-- Static noise always on, low opacity -->
+    <rect width="900" height="200" fill="#111" filter="url(#staticNoise)" opacity="0.25"/>
 
-    <!-- ██ PULSE — breathing darkness ██ -->
-    <rect width="900" height="200" fill="#000">
-      <animate attributeName="opacity" values="0;0;0;0;0;0.15;0;0;0;0;0;0;0.2;0;0" dur="4s" repeatCount="indefinite"/>
+    <!-- ══════════════════════════════════ -->
+    <!--   HIDDEN FACE #1 — top left       -->
+    <!--   Appears at random, vanishes      -->
+    <!-- ══════════════════════════════════ -->
+    <g opacity="0" transform="translate(30, 10) scale(0.55)">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="12s" repeatCount="indefinite"/>
+      <!-- face outline -->
+      <ellipse cx="90" cy="120" rx="70" ry="85" fill="#0a0a08" stroke="#1a1a14" stroke-width="1"/>
+      <!-- hollowed eyes — white sclera with dark blown pupils -->
+      <ellipse cx="62" cy="100" rx="20" ry="22" fill="url(#eyeWhite)" filter="url(#eyeGlow)"/>
+      <ellipse cx="118" cy="100" rx="20" ry="22" fill="url(#eyeWhite)" filter="url(#eyeGlow)"/>
+      <ellipse cx="63" cy="102" rx="12" ry="14" fill="url(#pupil)"/>
+      <ellipse cx="119" cy="102" rx="12" ry="14" fill="url(#pupil)"/>
+      <!-- tiny white glints -->
+      <circle cx="57" cy="95" r="3" fill="#fff" opacity="0.8"/>
+      <circle cx="113" cy="95" r="3" fill="#fff" opacity="0.8"/>
+      <!-- open mouth scream -->
+      <path d="M 55 148 Q 90 175 125 148 Q 115 165 90 168 Q 65 165 55 148 Z" fill="#000"/>
+      <path d="M 60 150 Q 90 172 120 150" stroke="#1a0a0a" stroke-width="1.5" fill="none"/>
+      <!-- teeth top -->
+      <rect x="68" y="150" width="10" height="11" rx="1" fill="#ccccaa"/>
+      <rect x="81" y="149" width="11" height="13" rx="1" fill="#ddddbb"/>
+      <rect x="95" y="149" width="11" height="13" rx="1" fill="#ddddbb"/>
+      <rect x="109" y="150" width="10" height="11" rx="1" fill="#ccccaa"/>
+      <!-- forehead lines/wrinkles -->
+      <path d="M 55 70 Q 90 64 125 70" stroke="#1a1a14" stroke-width="1" fill="none"/>
+      <path d="M 65 58 Q 90 53 115 58" stroke="#1a1a14" stroke-width="0.7" fill="none"/>
+    </g>
+
+    <!-- ══════════════════════════════════ -->
+    <!--   HIDDEN FACE #2 — right side     -->
+    <!--   Different timing                 -->
+    <!-- ══════════════════════════════════ -->
+    <g opacity="0" transform="translate(740, 5) scale(0.5)">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="12s" repeatCount="indefinite"/>
+      <ellipse cx="90" cy="120" rx="75" ry="90" fill="#090908"/>
+      <!-- wide open eyes -->
+      <ellipse cx="58" cy="98" rx="22" ry="24" fill="url(#eyeWhite)" filter="url(#eyeGlow)"/>
+      <ellipse cx="122" cy="98" rx="22" ry="24" fill="url(#eyeWhite)" filter="url(#eyeGlow)"/>
+      <ellipse cx="59" cy="100" rx="14" ry="16" fill="#000"/>
+      <ellipse cx="123" cy="100" rx="14" ry="16" fill="#000"/>
+      <circle cx="53" cy="93" r="4" fill="#fff" opacity="0.9"/>
+      <circle cx="117" cy="93" r="4" fill="#fff" opacity="0.9"/>
+      <!-- mouth agape -->
+      <ellipse cx="90" cy="160" rx="30" ry="22" fill="#050000"/>
+      <path d="M 62 148 Q 90 156 118 148 Q 118 182 90 182 Q 62 182 62 148 Z" fill="#0d0000"/>
+    </g>
+
+    <!-- ══════════════════════════════════ -->
+    <!--   SUBLIMINAL CENTER FACE          -->
+    <!--   Ultra-faint always present       -->
+    <!-- ══════════════════════════════════ -->
+    <g opacity="0.03" transform="translate(350, -20) scale(1.1)">
+      <ellipse cx="90" cy="120" rx="80" ry="95" fill="#222211"/>
+      <ellipse cx="58" cy="105" rx="24" ry="20" fill="#ffffee" opacity="0.6"/>
+      <ellipse cx="122" cy="105" rx="24" ry="20" fill="#ffffee" opacity="0.6"/>
+      <ellipse cx="59" cy="107" rx="14" ry="13" fill="#000"/>
+      <ellipse cx="123" cy="107" rx="14" ry="13" fill="#000"/>
+      <path d="M 55 158 Q 90 185 125 158 Q 115 172 90 175 Q 65 172 55 158 Z" fill="#000"/>
+      <animate attributeName="opacity" values="0.03;0.03;0.03;0.05;0.03;0.03;0.03;0.03;0.07;0.03;0.03;0.03" dur="7s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- ══════════════════════════════════ -->
+    <!--   FULL-BANNER SCREAMER FLASH      -->
+    <!--   Rare — white blast + face        -->
+    <!-- ══════════════════════════════════ -->
+    <!-- White flash -->
+    <rect width="900" height="200" fill="url(#screamFlash)" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.85;0.85;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="25s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- ██ BLOOD DRIPS FROM TOP ██ -->
-
-    <!-- Drip 1 -->
-    <g filter="url(#softBlood)">
-      <path d="M 80 0 L 83 0 L 85 28 Q 85 38 82 38 Q 79 38 79 28 Z" fill="url(#bloodGrad)" opacity="0.9">
-        <animate attributeName="d" values="M 80 0 L 83 0 L 85 0 Q 85 0 82 0 Q 79 0 79 0 Z;M 80 0 L 83 0 L 85 28 Q 85 38 82 38 Q 79 38 79 28 Z" dur="3s" begin="0.5s" fill="freeze"/>
-      </path>
-      <ellipse cx="82" cy="40" rx="5" ry="4" fill="#8B0000" opacity="0.7"/>
+    <!-- Screamer face — full banner, appears with flash -->
+    <g opacity="0" transform="translate(250,0) scale(2.1, 1.0)">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="25s" repeatCount="indefinite"/>
+      <!-- Giant screaming skull face -->
+      <ellipse cx="90" cy="100" rx="75" ry="90" fill="#0d0d0a"/>
+      <!-- Eye sockets wide -->
+      <ellipse cx="57" cy="85" rx="26" ry="28" fill="#ffffee" filter="url(#eyeGlow)"/>
+      <ellipse cx="123" cy="85" rx="26" ry="28" fill="#ffffee" filter="url(#eyeGlow)"/>
+      <ellipse cx="58" cy="87" rx="16" ry="18" fill="#000"/>
+      <ellipse cx="124" cy="87" rx="16" ry="18" fill="#000"/>
+      <circle cx="51" cy="80" r="5" fill="#fff" opacity="0.95"/>
+      <circle cx="117" cy="80" r="5" fill="#fff" opacity="0.95"/>
+      <!-- Screaming mouth -->
+      <ellipse cx="90" cy="148" rx="32" ry="28" fill="#000"/>
+      <rect x="62" y="134" width="11" height="14" rx="2" fill="#ddddc8"/>
+      <rect x="76" y="132" width="13" height="17" rx="2" fill="#eeeedd"/>
+      <rect x="92" y="132" width="13" height="17" rx="2" fill="#eeeedd"/>
+      <rect x="108" y="134" width="11" height="14" rx="2" fill="#ddddc8"/>
     </g>
 
-    <!-- Drip 2 -->
-    <g filter="url(#softBlood)">
-      <path d="M 200 0 L 203 0 L 204 18 Q 204 26 201 26 Q 198 26 198 18 Z" fill="url(#bloodGrad)" opacity="0.85">
-        <animate attributeName="d" values="M 200 0 L 203 0 L 204 0 Q 204 0 201 0 Q 198 0 198 0 Z;M 200 0 L 203 0 L 204 18 Q 204 26 201 26 Q 198 26 198 18 Z" dur="2.5s" begin="1.2s" fill="freeze"/>
-      </path>
-      <ellipse cx="201" cy="27" rx="4" ry="3" fill="#8B0000" opacity="0.6"/>
-    </g>
-
-    <!-- Drip 3 — long -->
-    <g filter="url(#softBlood)">
-      <path d="M 380 0 L 384 0 L 386 55 Q 387 70 383 70 Q 379 70 380 55 Z" fill="url(#bloodGrad)" opacity="0.95">
-        <animate attributeName="d" values="M 380 0 L 384 0 L 386 0 Q 387 0 383 0 Q 379 0 380 0 Z;M 380 0 L 384 0 L 386 55 Q 387 70 383 70 Q 379 70 380 55 Z" dur="4s" begin="0s" fill="freeze"/>
-      </path>
-      <ellipse cx="383" cy="72" rx="6" ry="5" fill="#CC0000" opacity="0.8"/>
-    </g>
-
-    <!-- Drip 4 -->
-    <g filter="url(#softBlood)">
-      <path d="M 550 0 L 553 0 L 555 35 Q 555 46 552 46 Q 549 46 549 35 Z" fill="url(#bloodGrad)" opacity="0.9">
-        <animate attributeName="d" values="M 550 0 L 553 0 L 555 0 Q 555 0 552 0 Q 549 0 549 0 Z;M 550 0 L 553 0 L 555 35 Q 555 46 552 46 Q 549 46 549 35 Z" dur="3.5s" begin="0.8s" fill="freeze"/>
-      </path>
-      <ellipse cx="552" cy="48" rx="5" ry="4" fill="#8B0000" opacity="0.7"/>
-    </g>
-
-    <!-- Drip 5 — huge centerish -->
-    <g filter="url(#softBlood)">
-      <path d="M 460 0 L 465 0 L 468 80 Q 469 100 464 100 Q 459 100 460 80 Z" fill="url(#bloodGrad)" opacity="0.7">
-        <animate attributeName="d" values="M 460 0 L 465 0 L 468 0 Q 469 0 464 0 Q 459 0 460 0 Z;M 460 0 L 465 0 L 468 80 Q 469 100 464 100 Q 459 100 460 80 Z" dur="5s" begin="0.3s" fill="freeze"/>
-      </path>
-      <ellipse cx="464" cy="103" rx="7" ry="5" fill="#CC0000" opacity="0.6"/>
-    </g>
-
-    <!-- Drip 6 -->
-    <g filter="url(#softBlood)">
-      <path d="M 720 0 L 723 0 L 725 22 Q 725 31 722 31 Q 719 31 719 22 Z" fill="url(#bloodGrad)" opacity="0.88">
-        <animate attributeName="d" values="M 720 0 L 723 0 L 725 0 Q 725 0 722 0 Q 719 0 719 0 Z;M 720 0 L 723 0 L 725 22 Q 725 31 722 31 Q 719 31 719 22 Z" dur="2.8s" begin="1.5s" fill="freeze"/>
-      </path>
-      <ellipse cx="722" cy="33" rx="4" ry="3" fill="#8B0000" opacity="0.65"/>
-    </g>
-
-    <!-- Drip 7 -->
-    <g filter="url(#softBlood)">
-      <path d="M 840 0 L 843 0 L 844 42 Q 844 54 841 54 Q 838 54 838 42 Z" fill="url(#bloodGrad)" opacity="0.92">
-        <animate attributeName="d" values="M 840 0 L 843 0 L 844 0 Q 844 0 841 0 Q 838 0 838 0 Z;M 840 0 L 843 0 L 844 42 Q 844 54 841 54 Q 838 54 838 42 Z" dur="3.2s" begin="0.1s" fill="freeze"/>
-      </path>
-      <ellipse cx="841" cy="56" rx="5" ry="4" fill="#8B0000" opacity="0.7"/>
-    </g>
-
-    <!-- Blood pool bottom left -->
-    <ellipse cx="82" cy="200" rx="22" ry="6" fill="#3D0000" opacity="0.6">
-      <animate attributeName="rx" values="0;22" dur="3s" begin="3s" fill="freeze"/>
-    </ellipse>
-
-    <!-- Blood pool bottom center -->
-    <ellipse cx="383" cy="200" rx="18" ry="5" fill="#3D0000" opacity="0.55">
-      <animate attributeName="rx" values="0;18" dur="4s" begin="4s" fill="freeze"/>
-    </ellipse>
-
-    <!-- ██ BACKGROUND SKULL (faint, behind text) ██ -->
-    <g opacity="0.06" transform="translate(350, 20) scale(0.9)">
-      <!-- skull shape rough -->
-      <ellipse cx="100" cy="90" rx="75" ry="70" fill="#CC0000"/>
-      <ellipse cx="100" cy="130" rx="40" ry="28" fill="#CC0000"/>
-      <!-- eye sockets -->
-      <ellipse cx="72" cy="90" rx="22" ry="20" fill="#000"/>
-      <ellipse cx="128" cy="90" rx="22" ry="20" fill="#000"/>
-      <!-- nose -->
-      <path d="M 93 115 L 100 105 L 107 115 Z" fill="#000"/>
-      <!-- teeth -->
-      <rect x="72" y="140" width="12" height="16" rx="2" fill="#000"/>
-      <rect x="88" y="140" width="12" height="18" rx="2" fill="#000"/>
-      <rect x="104" y="140" width="12" height="18" rx="2" fill="#000"/>
-      <rect x="120" y="140" width="12" height="16" rx="2" fill="#000"/>
-    </g>
-
-    <!-- ██ HORIZONTAL TEAR LINES ██ -->
-    <line x1="0" y1="66" x2="900" y2="66" stroke="#1a0000" stroke-width="1" opacity="0.8"/>
-    <line x1="0" y1="134" x2="900" y2="134" stroke="#1a0000" stroke-width="1" opacity="0.8"/>
-
-    <!-- ██ GLITCH SLICES — red offsets ██ -->
-    <!-- Slice A -->
-    <rect x="0" y="72" width="900" height="7" fill="#0d0000" opacity="0">
-      <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x" values="0;0;0;0;0;0;0;-40;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
+    <!-- ══════════════════════════════════ -->
+    <!--   STATIC FLICKER STRIPS          -->
+    <!-- ══════════════════════════════════ -->
+    <!-- Heavy static burst -->
+    <rect width="900" height="200" fill="#fff" opacity="0" filter="url(#staticNoise)">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="10s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- Slice B — red -->
-    <rect x="0" y="105" width="900" height="4" fill="#330000" opacity="0">
-      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;60;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;-30;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
+    <!-- Dark flicker (screen dies for a frame) -->
+    <rect width="900" height="200" fill="#000" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="13s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- ██ STATIC NOISE FLICKER ██ -->
-    <rect width="900" height="200" fill="url(#scanPattern)" opacity="0.18"/>
+    <!-- ══════════════════════════════════ -->
+    <!--   GLITCH HORIZONTAL TEARS        -->
+    <!-- ══════════════════════════════════ -->
+    <rect x="-40" y="78" width="940" height="9" fill="#000800" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;60;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-40;-90;-40;-40;-40;-40;-40;-40" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="120" width="900" height="6" fill="#040800" opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;-50;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;40" dur="7s" repeatCount="indefinite"/>
+    </rect>
 
-    <!-- ██ MAIN TEXT — LIQUIDATOR ██ -->
+    <!-- ══════════════════════════════════ -->
+    <!--   MAIN TITLE TEXT                 -->
+    <!-- ══════════════════════════════════ -->
 
-    <!-- Shadow layer — displaced behind -->
-    <text x="457" y="102" text-anchor="middle"
-          font-family="'Courier New', Courier, monospace"
-          font-size="68" font-weight="900"
-          fill="#3D0000"
-          letter-spacing="14"
-          filter="url(#violentGlitch)"
-          opacity="0.6">
+    <!-- Shadow behind — offset, very dark green -->
+    <text x="455" y="105" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="66" font-weight="900"
+      fill="#003300" letter-spacing="12"
+      opacity="0.7">LIQUIDATOR</text>
+
+    <!-- Ghost copy — violent horizontal displacement -->
+    <text x="440" y="103" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="66" font-weight="900"
+      fill="#004400" letter-spacing="12"
+      opacity="0"
+      filter="url(#shatter)">
       LIQUIDATOR
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="10s" repeatCount="indefinite"/>
     </text>
 
-    <!-- Red ghost left -->
-    <text x="446" y="100" text-anchor="middle"
-          font-family="'Courier New', Courier, monospace"
-          font-size="68" font-weight="900"
-          fill="#8B0000"
-          letter-spacing="14"
-          opacity="0">
+    <!-- Main text — dark green, no comfort -->
+    <text x="450" y="103" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="66" font-weight="900"
+      fill="url(#sickGreen)"
+      letter-spacing="12"
+      filter="url(#shatter)"
+      opacity="1">
       LIQUIDATOR
-      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.5;0;0;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="x" values="446;446;446;446;446;446;446;446;446;446;446;446;446;446;420;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;446;460;446;446;446;446;446;446;446;446" dur="5s" repeatCount="indefinite"/>
+      <!-- Slight opacity pulse — breathing -->
+      <animate attributeName="opacity"
+        values="1;1;1;0.95;1;1;1;1;0.88;1;1;1;1;1;0.92;1;1;1;1;0.85;1;1;1;1;1;1;1;0.9;1;1"
+        dur="7s" repeatCount="indefinite"/>
     </text>
 
-    <!-- Main text -->
-    <text x="450" y="100" text-anchor="middle"
-          font-family="'Courier New', Courier, monospace"
-          font-size="68" font-weight="900"
-          fill="url(#terrorText)"
-          letter-spacing="14"
-          filter="url(#redBloom)">
-      LIQUIDATOR
-      <animate attributeName="opacity" values="1;1;1;1;1;1;1;1;1;1;1;1;1;1;0.92;1;1;1;1;1;1;1;1;1;1;0.88;1;1;1;1;1;1;1;1;1;0.95;1;1;1;1;0.85;1;1;1;1;1;1;1;1;1" dur="5s" repeatCount="indefinite"/>
-    </text>
-
-    <!-- ██ SUBTITLE ██ -->
-    <text x="450" y="143" text-anchor="middle"
-          font-family="'Courier New', Courier, monospace"
-          font-size="13" font-weight="400"
-          fill="#660000"
-          letter-spacing="8"
-          filter="url(#corrupt)">
+    <!-- ══════════════════════════════════ -->
+    <!--   SUBTITLE — system message       -->
+    <!-- ══════════════════════════════════ -->
+    <text x="450" y="148" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="12" font-weight="400"
+      fill="#003300" letter-spacing="7"
+      opacity="0.65"
+      filter="url(#shatter)">
       [ CHAOS ENGINEER · SHE/HER · NO SURVIVORS ]
     </text>
 
-    <!-- ██ VERSION TAG ██ -->
-    <text x="450" y="163" text-anchor="middle"
-          font-family="'Courier New', Courier, monospace"
-          font-size="10"
-          fill="#330000"
-          letter-spacing="5"
-          opacity="0.7">
-      v 3 . 0 — 1 2 . 0 3 . 2 0 2 6
+    <!-- Creepy small text bottom — barely legible -->
+    <text x="450" y="172" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="8"
+      fill="#001500"
+      letter-spacing="3"
+      opacity="0.4">
+      SHE IS ALREADY BEHIND YOU
     </text>
 
-    <!-- ██ VIGNETTE ██ -->
-    <rect width="900" height="200" fill="url(#vignette)"/>
+    <!-- ══════════════════════════════════ -->
+    <!--   EYES IN CORNERS                 -->
+    <!--   Appear briefly, asymmetric      -->
+    <!-- ══════════════════════════════════ -->
 
-    <!-- ██ SCANLINES over everything ██ -->
-    <rect width="900" height="200" fill="url(#scanPattern)" opacity="0.12"/>
+    <!-- Bottom-left eye -->
+    <g transform="translate(18, 158)" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="25s" repeatCount="indefinite"/>
+      <ellipse cx="15" cy="12" rx="15" ry="11" fill="#ccccaa" filter="url(#eyeGlow)"/>
+      <ellipse cx="15" cy="13" rx="8" ry="9" fill="#000"/>
+      <circle cx="10" cy="9" r="2.5" fill="#fff" opacity="0.9"/>
+    </g>
 
-    <!-- ██ BORDER — barely visible blood edge ██ -->
-    <rect width="900" height="200" fill="none" stroke="#3D0000" stroke-width="2"/>
+    <!-- Top-right eye -->
+    <g transform="translate(845, 10)" opacity="0">
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        dur="25s" repeatCount="indefinite"/>
+      <ellipse cx="15" cy="12" rx="16" ry="11" fill="#ccccaa" filter="url(#eyeGlow)"/>
+      <ellipse cx="15" cy="13" rx="8" ry="9" fill="#000"/>
+      <circle cx="10" cy="9" r="2.5" fill="#fff" opacity="0.9"/>
+    </g>
 
-    <!-- Top blood line -->
-    <line x1="0" y1="0" x2="900" y2="0" stroke="#8B0000" stroke-width="2" opacity="0.5"/>
+    <!-- ══════════════════════════════════ -->
+    <!--   SCANLINES OVER EVERYTHING      -->
+    <!-- ══════════════════════════════════ -->
+    <rect width="900" height="200" fill="url(#lines)" opacity="0.2"/>
 
-    <!-- Corner marks — minimal, dead -->
-    <g stroke="#3D0000" stroke-width="1.5" fill="none" opacity="0.6">
+    <!-- ══════════════════════════════════ -->
+    <!--   VIGNETTE                        -->
+    <!-- ══════════════════════════════════ -->
+    <rect width="900" height="200" fill="url(#vig)"/>
+
+    <!-- ══════════════════════════════════ -->
+    <!--   BORDER — dead green             -->
+    <!-- ══════════════════════════════════ -->
+    <rect width="900" height="200" fill="none" stroke="#001500" stroke-width="2"/>
+
+    <!-- corner marks -->
+    <g stroke="#002200" stroke-width="1.5" fill="none" opacity="0.6">
       <polyline points="8,8 8,22 22,22"/>
       <polyline points="878,8 892,8 892,22"/>
       <polyline points="8,192 8,178 22,178"/>
       <polyline points="878,192 892,192 892,178"/>
     </g>
 
-    <!-- SYS tag -->
-    <text x="12" y="12" font-family="'Courier New', monospace" font-size="8" fill="#3D0000" opacity="0.5">SYS://LIQUIDATOR.HUB</text>
-    <text x="790" y="12" font-family="'Courier New', monospace" font-size="8" fill="#3D0000" opacity="0.5">12.03.2026</text>
+    <!-- sys tags -->
+    <text x="12" y="12" font-family="'Courier New', monospace" font-size="8" fill="#002200" opacity="0.5">SYS://LIQUIDATOR.HUB</text>
+    <text x="790" y="12" font-family="'Courier New', monospace" font-size="8" fill="#002200" opacity="0.5">12.03.2026</text>
+    <text x="12" y="196" font-family="'Courier New', monospace" font-size="7" fill="#001a00" opacity="0.35">WATCHING</text>
+    <text x="840" y="196" font-family="'Courier New', monospace" font-size="7" fill="#001a00" opacity="0.35">RUN</text>
 
   </g>
 </svg>
