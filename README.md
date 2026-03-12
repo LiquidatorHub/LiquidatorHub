@@ -1,6 +1,4 @@
 <!-- ████████████████ SNAKE ████████████████ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
-
 <br/>
 <p align="center">
   <img src="./github-contribution-grid-snake.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
@@ -34,39 +32,6 @@
 
 <br/>
 
-<!-- ████████████████ MAIN TITLE ████████████████ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
-
-<br/>
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=36&duration=2500&pause=1200&color=FF00FF&center=true&vCenter=true&width=900&height=90&lines=LIQUIDATOR+3.0;CHAOS+ENGINEER+%F0%9F%94%A5;NO+SURVIVORS+%F0%9F%92%80;MATRIX+OWNED+%E2%98%A0;SHE%2FHER+%E2%99%A0;SYSTEM%3A+NULL" alt="GLITCH MAIN"/>
-</p>
-
-<!-- ████████████████ STATUS BADGES ████████████████ -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
-
-<br/>
-<p align="center">
-  <img src="https://img.shields.io/badge/⚠_STATUS-HUNTING-FF0040?style=for-the-badge&labelColor=0A0A0A&color=FF0040"/>
-  <img src="https://img.shields.io/badge/🔴_THREAT-OVER_9000-FF00FF?style=for-the-badge&labelColor=0A0A0A"/>
-  <img src="https://img.shields.io/badge/💀_MERCY-NULL-00FF9F?style=for-the-badge&labelColor=0A0A0A"/>
-  <img src="https://img.shields.io/badge/⚡_MATRIX-COMPROMISED-FF1493?style=for-the-badge&labelColor=0A0A0A"/>
-</p>
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FF0040,50:FF00FF,100:00FF9F&height=3" width="100%"/>
-
-<br/>
-<p align="center">
-  <img src="https://img.shields.io/badge/🖥_OS-KALI_LINUX-557C94?style=for-the-badge&logo=linux&logoColor=white&labelColor=0A0A0A"/>
-  <img src="https://img.shields.io/badge/🎯_FOCUS-FULL_STACK-FF6B6B?style=for-the-badge&labelColor=0A0A0A"/>
-  <img src="https://img.shields.io/badge/☠_SURVIVORS-0-FF0040?style=for-the-badge&labelColor=0A0A0A"/>
-</p>
-
-<br/>
-<!-- ████████████████ GRADIENT DIVIDER ████████████████ -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00FF9F,50:FF00FF,100:FF0040&height=3" width="100%"/>
-
-<br/>
 
 <!-- ████████████████ ARSENAL ████████████████ -->
 
