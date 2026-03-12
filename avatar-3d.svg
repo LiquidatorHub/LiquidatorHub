@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a0030;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#050008;stop-opacity:1"/>
+    </radialGradient>
+    <radialGradient id="faceGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" style="stop-color:#2a0a4a"/>
+      <stop offset="100%" style="stop-color:#0d0018"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="avatarGlitch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" seed="3">
+        <animate attributeName="seed" values="3;7;1;9;3" dur="0.3s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="0" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" values="0;0;0;0;0;0;0;8;0;0;0;0;0;0;0;6;0;0;0;0" dur="4s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="98" fill="url(#bgGlow)" stroke="#FF00FF" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Rotating outer ring -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#FF00FF" stroke-width="0.5" stroke-dasharray="10 5" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#00FF9F" stroke-width="0.5" stroke-dasharray="5 15" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Hex grid background -->
+  <g opacity="0.08" stroke="#FF00FF" stroke-width="0.5" fill="none">
+    <polygon points="100,20 120,31 120,53 100,64 80,53 80,31"/>
+    <polygon points="140,44 160,55 160,77 140,88 120,77 120,55"/>
+    <polygon points="60,44 80,55 80,77 60,88 40,77 40,55"/>
+    <polygon points="100,68 120,79 120,101 100,112 80,101 80,79"/>
+    <polygon points="140,92 160,103 160,125 140,136 120,125 120,103"/>
+    <polygon points="60,92 80,103 80,125 60,136 40,125 40,103"/>
+    <polygon points="100,116 120,127 120,149 100,160 80,149 80,127"/>
+  </g>
+
+  <!-- Main head/skull shape with 3D perspective -->
+  <g filter="url(#avatarGlitch)">
+    <!-- Head shadow for 3D depth -->
+    <ellipse cx="103" cy="115" rx="38" ry="45" fill="#000" opacity="0.6"/>
+
+    <!-- Main head -->
+    <ellipse cx="100" cy="110" rx="38" ry="45" fill="url(#faceGrad)"/>
+
+    <!-- Head highlight (3D top light) -->
+    <ellipse cx="90" cy="82" rx="18" ry="12" fill="#FF00FF" opacity="0.12"/>
+
+    <!-- Jaw -->
+    <path d="M 68 125 Q 70 155 100 158 Q 130 155 132 125 Z" fill="#0d0018"/>
+    <path d="M 70 127 Q 72 152 100 155 Q 128 152 130 127 Z" fill="#1a0030" stroke="#FF00FF" stroke-width="0.5" opacity="0.6"/>
+
+    <!-- Cyberpunk visor/mask -->
+    <path d="M 67 100 Q 68 88 100 86 Q 132 88 133 100 L 130 112 Q 115 122 100 122 Q 85 122 70 112 Z"
+          fill="#050010" stroke="#FF00FF" stroke-width="1"/>
+
+    <!-- Visor glow inner -->
+    <path d="M 72 101 Q 73 91 100 89 Q 127 91 128 101 L 126 110 Q 113 118 100 118 Q 87 118 74 110 Z"
+          fill="#1a0040" opacity="0.8"/>
+
+    <!-- Eye scanlines effect -->
+    <rect x="72" y="93" width="56" height="2" fill="#FF00FF" opacity="0.06"/>
+    <rect x="72" y="97" width="56" height="2" fill="#FF00FF" opacity="0.06"/>
+    <rect x="72" y="101" width="56" height="2" fill="#FF00FF" opacity="0.06"/>
+    <rect x="72" y="105" width="56" height="2" fill="#FF00FF" opacity="0.06"/>
+    <rect x="72" y="109" width="56" height="2" fill="#FF00FF" opacity="0.06"/>
+
+    <!-- Left eye glowing -->
+    <ellipse cx="85" cy="103" rx="10" ry="6" fill="#FF00FF" opacity="0.2"/>
+    <ellipse cx="85" cy="103" rx="7" ry="4" fill="#FF00FF" opacity="0.5" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;0.9;0.5;0.7;0.3;0.8;0.5" dur="1.8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="85" cy="103" rx="3" ry="2" fill="#fff" opacity="0.9"/>
+
+    <!-- Right eye glowing -->
+    <ellipse cx="115" cy="103" rx="10" ry="6" fill="#00FF9F" opacity="0.2"/>
+    <ellipse cx="115" cy="103" rx="7" ry="4" fill="#00FF9F" opacity="0.5" filter="url(#glow)">
+      <animate attributeName="opacity" values="0.5;0.3;0.8;0.5;0.9;0.4;0.5" dur="1.8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="115" cy="103" rx="3" ry="2" fill="#fff" opacity="0.9"/>
+
+    <!-- Nose bridge (minimal) -->
+    <line x1="100" y1="110" x2="100" y2="118" stroke="#FF00FF" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Mouth / jaw detail -->
+    <path d="M 83 135 Q 100 142 117 135" stroke="#FF00FF" stroke-width="1" fill="none" opacity="0.5"/>
+    <line x1="88" y1="137" x2="88" y2="145" stroke="#00FF9F" stroke-width="0.7" opacity="0.4"/>
+    <line x1="95" y1="138" x2="95" y2="146" stroke="#00FF9F" stroke-width="0.7" opacity="0.4"/>
+    <line x1="100" y1="139" x2="100" y2="147" stroke="#00FF9F" stroke-width="0.7" opacity="0.4"/>
+    <line x1="105" y1="138" x2="105" y2="146" stroke="#00FF9F" stroke-width="0.7" opacity="0.4"/>
+    <line x1="112" y1="137" x2="112" y2="145" stroke="#00FF9F" stroke-width="0.7" opacity="0.4"/>
+
+    <!-- Cyber implant left temple -->
+    <rect x="64" y="98" width="6" height="14" rx="1" fill="#0a0a1a" stroke="#FF00FF" stroke-width="1"/>
+    <rect x="65" y="100" width="4" height="2" fill="#FF00FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8;1;0.4;0.8" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="65" y="104" width="4" height="2" fill="#00FF9F" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.3;0.6;0.9;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="65" y="108" width="4" height="2" fill="#FF1493" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;1;0.7;0.4;0.7" dur="0.9s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Cyber implant right temple -->
+    <rect x="130" y="98" width="6" height="14" rx="1" fill="#0a0a1a" stroke="#00FF9F" stroke-width="1"/>
+    <rect x="131" y="100" width="4" height="2" fill="#00FF9F" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.4;0.8;0.2;0.8" dur="1.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="131" y="104" width="4" height="2" fill="#FF00FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.3;0.9;0.6;1;0.6" dur="1.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="131" y="108" width="4" height="2" fill="#00FFFF" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.4;0.7;1;0.3;0.7" dur="1s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Top of head with circuit traces -->
+    <path d="M 70 92 Q 80 65 100 62 Q 120 65 130 92" fill="#0d001e" stroke="#FF00FF" stroke-width="0.5" opacity="0.8"/>
+
+    <!-- Circuit traces on forehead -->
+    <path d="M 85 78 L 85 70 L 95 70" fill="none" stroke="#FF00FF" stroke-width="0.7" opacity="0.5"/>
+    <circle cx="85" cy="78" r="1.5" fill="#FF00FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M 115 78 L 115 70 L 105 70" fill="none" stroke="#00FF9F" stroke-width="0.7" opacity="0.5"/>
+    <circle cx="115" cy="78" r="1.5" fill="#00FF9F" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.3;0.8" dur="1.7s" repeatCount="indefinite"/>
+    </circle>
+    <line x1="95" y1="70" x2="105" y2="70" stroke="#FF00FF" stroke-width="0.7" opacity="0.5"/>
+    <circle cx="100" cy="70" r="2" fill="#FF1493" opacity="0.9" filter="url(#glow)">
+      <animate attributeName="r" values="2;2.5;2;1.5;2" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Collar/neck -->
+    <path d="M 85 154 L 80 170 L 120 170 L 115 154 Z" fill="#0a0018"/>
+    <path d="M 87 155 L 83 168 L 117 168 L 113 155 Z" fill="#150028" stroke="#FF00FF" stroke-width="0.5" opacity="0.5"/>
+  </g>
+
+  <!-- Data stream particles -->
+  <g font-family="monospace" font-size="8" fill="#00FF9F" opacity="0.4">
+    <text x="20" y="50">01</text>
+    <text x="165" y="70">10</text>
+    <text x="15" y="140">FF</text>
+    <text x="163" y="150">00</text>
+    <text x="30" y="170">∞</text>
+    <text x="155" y="170">💀</text>
+  </g>
+
+  <!-- Corner pulse dots -->
+  <circle cx="20" cy="20" r="3" fill="#FF00FF">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="20" r="3" fill="#00FF9F">
+    <animate attributeName="opacity" values="1;0;1" dur="1.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="20" cy="180" r="3" fill="#00FF9F">
+    <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="180" r="3" fill="#FF1493">
+    <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
