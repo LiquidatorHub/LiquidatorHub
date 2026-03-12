@@ -10,28 +10,6 @@
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════════════════════╗
-║                                                                          ║
-║    ███████╗██████╗ ██████╗  ██████╗ ██████╗                             ║
-║    ██╔════╝██╔══██╗██╔══██╗██╔═══██╗██╔══██╗                            ║
-║    █████╗  ██████╔╝██████╔╝██║   ██║██████╔╝                            ║
-║    ██╔══╝  ██╔══██╗██╔══██╗██║   ██║██╔══██╗                            ║
-║    ███████╗██║  ██║██║  ██║╚██████╔╝██║  ██║                            ║
-║    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   404: MERCY NOT FOUND   ║
-║                                                                          ║
-║  [ SYSTEM BREACH DETECTED ]  [ LIQUIDATOR PROTOCOL ACTIVE ]             ║
-║                                                                          ║
-║  > ORIGIN:      CLASSIFIED                                               ║
-║  > OPERATOR:    LIQUIDATOR // SHE/HER // CHAOS_ENGINE_v3                ║
-║  > STATUS:      ONLINE ██████████ 100%                                   ║
-║  > THREAT LVL:  ████████████████████ OVER 9000                          ║
-║                                                                          ║
-║  ⚠  ALL WHO ENTER WILL NOT LEAVE THE SAME  ⚠                           ║
-║                                                                          ║
-╚══════════════════════════════════════════════════════════════════════════╝
-```
-
 </div>
 
 <!-- ██████████████ ACCESS GRANTED SEQUENCE ██████████████ -->
@@ -67,11 +45,7 @@
 <p align="center">
 
 ```
-  ╔══════════╗
-  ║  ◈ LIQUIDATOR ◈  ║
-  ╚══════════╝
 ```
-
 <img src="https://github-profile-trophy.vercel.app/?username=LiquidatorHub&theme=radical&no-frame=true&column=1&row=3" width="180"/>
 
 </p>
@@ -81,40 +55,6 @@
 <td valign="top">
 
 <!-- TERMINAL SESSION -->
-
-```bash
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ whoami
-  → LIQUIDATOR | CHAOS ENGINEER | SHE/HER 💀
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ uptime
-  → ONLINE SINCE: BIRTH
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ cat /etc/motd
-  → "I don't code. I liquidate the fucking system."
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ ls ./arsenal/
-  JS  TS  React  Node  Python  Next  Tailwind  Chaos
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ cat .mission
-  → Turning bugs into bodies. No survivors.
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ last_breach
-  → 12.03.2026 — TARGET: GitHub aesthetic
-  → RESULT: FULLY LIQUIDATED ✓
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ ./run --respect @0fuz
-  → eternal. legend. born this chaos from.
-
-┌──[LIQUIDATOR@MATRIX]──[~]
-└─$ █
-```
 
 </td>
 </tr>
@@ -178,21 +118,6 @@
 <!-- ██████████████ SYSTEM STATUS ██████████████ -->
 
 <div align="center">
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    ⚠  SYSTEM STATUS  ⚠                      │
-├──────────────────────────┬──────────────────────────────────┤
-│  CAFFEINE LEVELS         │  ██████████████████ 999%         │
-│  MERCY RESERVES          │  ░░░░░░░░░░░░░░░░░░ 0%           │
-│  CHAOS CAPACITY          │  ██████████████████ INFINITE     │
-│  RULES FOLLOWED          │  ░░░░░░░░░░░░░░░░░░ NONE         │
-│  BUGS LIQUIDATED         │  ██████████████████ ∞            │
-│  SURVIVORS               │  ░░░░░░░░░░░░░░░░░░ 0            │
-│  MATRIX INTEGRITY        │  ░░░░░░░░░░░░░░░░░░ NULL         │
-└──────────────────────────┴──────────────────────────────────┘
-```
-
 </div>
 
 <br/>
@@ -225,10 +150,7 @@
 <div align="center">
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  "I don't code. I liquidate the fucking system. 💀"
-                                    — Liquidator, 2026
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  "I don't code. I liquidate. 💀"
 ```
 
 <img src="https://img.shields.io/badge/ACCESS-GRANTED_☠-FF00FF?style=for-the-badge&labelColor=0A0A0A"/>
