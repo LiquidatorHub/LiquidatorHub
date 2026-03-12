@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="140" viewBox="0 0 900 140">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#020a02"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+
+    <!-- Main text gradient — electric green -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FF41">
+        <animate attributeName="stop-color" values="#00FF41;#39FF14;#00CC00;#7FFF00;#00FF41" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#39FF14">
+        <animate attributeName="stop-color" values="#39FF14;#00FF41;#AAFF00;#00FF41;#39FF14" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#00CC00">
+        <animate attributeName="stop-color" values="#00CC00;#00FF41;#39FF14;#00CC00;#7FFF00" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Handle gradient — dim -->
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003300"/>
+      <stop offset="50%" style="stop-color:#00AA00"/>
+      <stop offset="100%" style="stop-color:#003300"/>
+    </linearGradient>
+
+    <!-- Glow bloom -->
+    <filter id="bloom" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b1"/>
+      <feGaussianBlur stdDeviation="12" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tight glow for small text -->
+    <filter id="glowTight">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Scanlines -->
+    <pattern id="scan" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="#000" opacity="0.3"/>
+    </pattern>
+
+    <!-- Glitch displacement -->
+    <filter id="glitch" x="-5%" y="-10%" width="110%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.9 0.02" numOctaves="1" seed="4" result="n">
+        <animate attributeName="seed" values="4;11;2;17;4" dur="0.12s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale"
+          values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;18;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;14;0;0;0"
+          dur="7s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+
+    <clipPath id="clip"><rect width="900" height="140"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="900" height="140" fill="url(#bg)"/>
+
+    <!-- Subtle horizontal lines background -->
+    <g stroke="#001800" stroke-width="0.5" opacity="0.6">
+      <line x1="0" y1="35" x2="900" y2="35"/>
+      <line x1="0" y1="70" x2="900" y2="70"/>
+      <line x1="0" y1="105" x2="900" y2="105"/>
+    </g>
+
+    <!-- Left decorative bar -->
+    <rect x="40" y="55" width="3" height="50" fill="url(#mainGrad)" opacity="0.9" filter="url(#glowTight)">
+      <animate attributeName="height" values="50;55;50;48;50" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="55;52;55;57;55" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="48" y="62" width="1.5" height="36" fill="#006600" opacity="0.5"/>
+
+    <!-- Right decorative bar -->
+    <rect x="857" y="55" width="3" height="50" fill="url(#mainGrad)" opacity="0.9" filter="url(#glowTight)">
+      <animate attributeName="height" values="50;48;52;50;55" dur="2.3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="55;57;53;55;52" dur="2.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="850" y="62" width="1.5" height="36" fill="#006600" opacity="0.5"/>
+
+    <!-- ═══ QUOTE MARKS ═══ -->
+    <text x="68" y="78"
+      font-family="'Georgia', 'Times New Roman', serif"
+      font-size="64" font-weight="900"
+      fill="#00FF41" opacity="0.15"
+      filter="url(#glowTight)">"</text>
+
+    <text x="824" y="110"
+      font-family="'Georgia', 'Times New Roman', serif"
+      font-size="64" font-weight="900"
+      fill="#00FF41" opacity="0.15"
+      filter="url(#glowTight)">"</text>
+
+    <!-- ═══ MAIN TEXT — BORN THANKS TO ═══ -->
+    <!-- Ghost red offset (glitch layer) -->
+    <text x="452" y="72" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="13" font-weight="400"
+      fill="#00FF00"
+      letter-spacing="14"
+      opacity="0"
+      filter="url(#glitch)">
+      BORN  THANKS  TO
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.5;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.4;0;0;0"
+        dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="x"
+        values="452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;435;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;452;465;452;452"
+        dur="7s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- Main "BORN THANKS TO" -->
+    <text x="450" y="72" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="13" font-weight="400"
+      fill="url(#handleGrad)"
+      letter-spacing="14"
+      filter="url(#glowTight)">
+      BORN  THANKS  TO
+      <animate attributeName="opacity" values="1;1;0.95;1;1;0.9;1;1;1;0.95;1" dur="4s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- ═══ HANDLE — @0fuz ═══ -->
+    <!-- Scanline sweep over handle -->
+    <rect x="200" y="82" width="500" height="40" fill="none">
+      <animate attributeName="x" values="-500;1400" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- @0fuz — shadow layer -->
+    <text x="454" y="118" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="52" font-weight="900"
+      fill="#002200"
+      letter-spacing="8">
+      @0fuz
+    </text>
+
+    <!-- @0fuz — glitch ghost -->
+    <text x="455" y="117" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="52" font-weight="900"
+      fill="#39FF14"
+      letter-spacing="8"
+      opacity="0"
+      filter="url(#glitch)">
+      @0fuz
+      <animate attributeName="opacity"
+        values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.7;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.5;0;0;0"
+        dur="7s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- @0fuz — MAIN -->
+    <text x="450" y="117" text-anchor="middle"
+      font-family="'Courier New', Courier, monospace"
+      font-size="52" font-weight="900"
+      fill="url(#mainGrad)"
+      letter-spacing="8"
+      filter="url(#bloom)">
+      @0fuz
+      <!-- breathing scale via opacity flicker -->
+      <animate attributeName="opacity" values="1;1;1;0.92;1;1;1;1;0.88;1;1;1;0.95;1;1" dur="5s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- Underline — animated draw -->
+    <line x1="280" y1="125" x2="620" y2="125" stroke="url(#mainGrad)" stroke-width="1.5" opacity="0.4" filter="url(#glowTight)">
+      <animate attributeName="x1" values="450;280;280;280;280;280;280;280;280;280" dur="1.5s" fill="freeze"/>
+      <animate attributeName="x2" values="450;620;620;620;620;620;620;620;620;620" dur="1.5s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;0;0.4;0.4;0.4;0.35;0.4;0.4;0.4;0.4;0.38;0.4" dur="4s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Scanlines overlay -->
+    <rect width="900" height="140" fill="url(#scan)" opacity="0.15"/>
+
+    <!-- Vignette -->
+    <radialGradient id="vig" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0.75"/>
+    </radialGradient>
+    <rect width="900" height="140" fill="url(#vig)"/>
+  </g>
+</svg>
