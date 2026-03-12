@@ -88,7 +88,7 @@
 <!-- ██████████████ SNAKE ██████████████ -->
 
 <p align="center">
-  <img src="./github-contribution-grid-snake-dark.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
+  <img src="./github-contribution-grid-snake.svg" alt="CONTRIBUTION SNAKE — LIQUIDATOR FEEDS"/>
 </p>
 
 <br/>
